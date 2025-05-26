@@ -16,22 +16,17 @@ HTML5 — Estrutura da aplicação
 CSS3 — Estilo visual com identidade Santander
 JavaScript — Navegação entre abas e interatividade básica
 GitHub Pages — Hospedagem do material
+
 📂 Estrutura do Projeto
-📁 SantanderWiki/ │
 
+📁 SantanderWiki/ 
+│
 ├── index.html # Início
-
 ├── simulador.html # Simulador de atendimento GETNET
-
 ├── Material-De-Apoio.html # Página com guias e PDFs
-
 ├── /imagens # Imagens dos aplicativos e e-mails
-
 ├── /pdfs # Guias em PDF para visualização/baixa
-
 └── README.md # Este arquivo
-
-Sim. Copiar Editar
 
 📸 Prévia Visual
 captura de tela
