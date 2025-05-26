@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Material de Apoio - Santander</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #000;
+    }
+
+    header {
+      background: #ec0000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 80px;
+      margin-right: 15px;
+      border-radius: 4px;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #ec0000;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 14px 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      border-bottom: 3px solid #ec0000;
+      background-color: #fff0f0;
+    }
+
+    .tab-content {
+      padding: 20px;
+    }
+
+    .image-container {
+      text-align: center;
+    }
+
+    .app-img {
+      max-width: 100%;
+      max-height: 600px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #ec0000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    pre {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #ec0000;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://gkpb.com.br/wp-content/uploads/2018/03/novo-logo-santander-fundo-vermelho-802x420.jpg" alt="Logo Santander" />
+      <span>WIKI SANTANDER</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-button active" onclick="openTab(event, 'atendimento')">Atendimento</button>
+    <button class="tab-button" onclick="openTab(event, 'aplicativo')">Aplicativo</button>
+    <button class="tab-button" onclick="openTab(event, 'recepcao')">E-mail</button>
+    <button class="tab-button" onclick="openTab(event, 'passos')">Ferramentas</button>
+    <button class="tab-button" onclick="openTab(event, 'pdf')">Guia de Abordagem</button> <!-- NOVA ABA -->
+    <button class="tab-button" onclick="openTab(event, 'pdfE1')">Guia E1</button> <!-- NOVA ABA -->
+    <button class="tab-button" onclick="openTab(event, 'pdfMEI')">Guia MEI</button> <!-- NOVA ABA -->
+    <button class="tab-button" onclick="openTab(event, 'pdfParceiros')">Guia Parceiros</button> <!-- NOVA ABA -->
+    <button class="tab-button" onclick="openTab(event, 'CapacitacaoMEI')">Novo Guia</button> <!-- NOVA ABA -->
+    <button class="tab-button" onclick="openTab(event, 'SimuladorGET')">Simulator</button> <!-- NOVA ABA -->
+  </nav>
+
+  <!-- Atendimento -->
+  <section class="tab-content" id="atendimento">
+    <h2>Atendimento ao Cliente</h2>
+    <p>Abaixo estão os scripts de teste de atendimento:</p>
+    <pre>
+📞 Script de Ligação Informal – Abertura de Conta PJ Santander
+🔑 Abertura:
+
+Saudação Casual:
+
+"Bom dia, [Nome do Cliente], tudo certo por aí?"
+
+Apresentação Rápida e Simples:
+
+"Eu sou [Seu Nome], faço parte da equipe do Santander e trabalho com soluções bancárias para empresas como a sua."
+
+🔍 Pergunta para Criar Curiosidade e Envolver o Cliente:
+
+Inicie com uma pergunta sobre o banco atual:
+
+"Me conta, qual conta PJ você está usando no momento?"
+
+🧐 Explorando Benefícios Atuais do Cliente:
+
+Pergunte sobre as vantagens atuais:
+
+"Quais são as principais vantagens que você tem com essa conta? Alguma coisa que realmente te ajuda no dia a dia?"
+
+💬 Pergunta-Chave para Entender a “Dor”:
+
+Pergunte sobre o limite:
+
+"E quanto ao limite da conta, você tem algum limite de crédito que te atende bem? Ou sente que falta mais flexibilidade?"
+
+⚠️ Cuidados Importantes ao Perguntar sobre Limite:
+
+Alerta de Transição para Solução:
+
+Quando você perguntar sobre o limite, o cliente geralmente abre a mente e já começa a pensar sobre as possibilidades. Não ofereça um limite diretamente, mas use isso como um gatilho para entender mais sobre a dor do cliente.
+
+🔑 Criando Empatia e Diagnóstico:
+
+Explore a dor do cliente:
+
+"Muitas vezes, as empresas se sentem limitadas pelo banco em termos de crédito ou até mesmo pelas taxas que são cobradas, né? Posso te perguntar, qual a maior dor que você tem com o banco atual?"
+
+Escute atentamente! A ideia é ouvir mais do que falar aqui. A dor pode ser: altas tarifas, dificuldade de acesso a crédito, ou até o atendimento demorado.
+
+🎯 O “Cheque Mate” - Apresentação do Santander:
+
+Proposta de Solução - Direta e Conectada à Dor do Cliente:
+
+"O Santander tem uma proposta bem interessante para empresas como a sua. Com a conta PJ Santander, você tem isenção de tarifas nos primeiros 3 meses, e mais, temos pacotes que se ajustam à sua movimentação, sem aquelas taxas pesadas. E se você precisar de crédito, temos soluções mais ágeis e com melhores condições, já que somos um banco parceiro das empresas."
+
+Destaque a Flexibilidade e a Simplicidade:
+
+"Além disso, você gerencia tudo pelo app, sem sair de casa, e tem acesso a maquininha com taxas mais baixas."
+
+📅 Call to Action (CTA):
+
+Fechamento com Ação Clara:
+
+"O que você acha? Podemos agendar uma conversa com um especialista do Santander para ver como essa conta pode ajudar no seu negócio?"
+
+🎯 Dicas de Entonação e Atitude para Conectar Melhor com o Cliente:
+Seja leve e amistoso, não formal demais.
+
+Escute mais do que fale — deixe o cliente falar sobre os problemas dele.
+
+Empatia é chave. Quando ele fala sobre um problema, use frases como:
+
+"Entendo como deve ser difícil..."
+
+"Muitos dos nossos clientes começaram com essa mesma dificuldade..."
+
+Quando o cliente fala sobre limite ou problema financeiro, faça uma pausa e demonstre que você está realmente ouvindo. Nunca ofereça soluções de imediato, mas sim uma alternativa consultiva.
+
+Exemplo Visual do Script:
+💬 1. Abertura e Curiosidade
+Você: "Oi, [Nome]! Tudo certo? Aqui é o [Seu Nome], do Santander. Posso te fazer uma pergunta rápida? Qual banco você usa para a sua conta PJ?"
+
+Cliente: "Eu uso o [nome do banco]"
+
+💬 2. Explorando Benefícios e "Dor"
+Você: "E, dessa conta PJ, o que você mais gosta? Tem alguma vantagem que realmente te ajuda no seu dia a dia?"
+
+Cliente: "Eu tenho uma certa flexibilidade, mas a tarifa é alta..."
+
+Você: "Entendo... e quanto ao limite? Você tem algum limite de crédito? Ou acha que poderia ter mais flexibilidade?"
+
+💬 3. "Cheque Mate"
+Você: "Muitas empresas sentem que o banco não dá a flexibilidade que precisam, não é? O Santander tem uma oferta bem bacana. Nos primeiros 3 meses, você tem isenção total de tarifas, pode acessar crédito mais rápido e a maquininha Getnet tem taxas super atraentes."
+
+💬 4. Fechamento Direto
+Você: "Eu posso te enviar mais informações para você analisar com calma, ou podemos agendar uma conversa com um especialista para ver como essa conta PJ pode ajudar no seu negócio. O que acha?"
+
+📝 Principais Elementos Visuais do Script:
+Destacar benefícios rapidamente.
+
+Sempre usar perguntas abertas para que o cliente fale e você "diagnostique" a dor dele.
+
+Fazer pausas e não forçar uma venda direta logo no início.
+
+
+
+📞 Script de Ligação Comercial – Abertura de Conta PJ Santander (via Wise)
+[Início da Ligação]
+
+Atendente:
+Olá, [Nome do Cliente], tudo bem?
+Meu nome é [Seu Nome], falo aqui da Wise, parceira autorizada do Banco Santander.
+Estou entrando em contato porque vimos que você tem um CNPJ ativo e gostaríamos de apresentar uma oportunidade exclusiva para abertura de conta PJ com condições bem vantajosas. Posso tomar um minutinho do seu tempo?
+
+[Apresentação da Oferta]
+
+Atendente:
+A conta PJ do Santander foi desenvolvida para facilitar a gestão financeira de empresas como a sua. E o melhor: ao abrir a conta conosco, você terá isenção total de tarifas pelos primeiros 3 meses.
+
+Durante esse período, você poderá utilizar todos os serviços do banco — como transferências, emissão de boletos, cartões, e até a maquininha Getnet — sem pagar mensalidade.
+Após os 3 meses, a mensalidade varia de acordo com o pacote escolhido, mas também pode ser zerada se você movimentar ou investir valores específicos. Ou seja, você pode continuar com isenção conforme o uso da conta.
+
+[Benefícios-Chave]
+
+Atendente:
+Além disso, o Santander oferece:
+
+Acesso ao App Santander Empresas com gestão de extratos, boletos, Pix e relatórios;
+
+Ferramenta CoPiloto, para controle de estoque, notas fiscais e loja virtual;
+
+Condições especiais na maquininha Getnet com taxas a partir de 1,89%;
+
+Possibilidade de crédito PJ e cartão empresarial com benefícios.
+
+[Convite à Ação]
+
+Atendente:
+Gostaria de seguir com a abertura? O processo é 100% digital, rápido e seguro — e como parceiros autorizados, nós da Wise podemos te acompanhar em cada etapa.
+
+Você pode começar agora mesmo com seu CNPJ, documento de identificação e comprovante de endereço. Podemos iniciar juntos?
+
+[Fechamento ou Encaminhamento]
+
+Atendente:
+Caso você prefira, posso te enviar agora por WhatsApp o link de abertura com as instruções passo a passo. Assim você pode revisar com calma e me chamar em qualquer dúvida.
+
+Qual o melhor número para esse envio?
+(ou)
+Posso te encaminhar agora para nosso time de suporte exclusivo Wise + Santander para seguir com a abertura, tudo bem?
+
+📞 Script Principal – Empresários / 
+Atendente:
+Olá, tudo bem? É um contato rápido: estou oferecendo a abertura da conta no Banco Santander, 
+um banco digital completo, sem tarifas de manutenção, com cartão de crédito sem anuidade, 
+Pix ilimitado, tag de pedágio gratuita, e soluções financeiras ideais pra quem busca praticidade e economia.
+
+Dá pra abrir em menos de 5 minutos e eu posso te ajudar agora mesmo.
+
+Posso te cadastrar?
+
+🔄 Objeções Comuns e Respostas
+
+❓"Já tenho conta em outro banco"
+
+Perfeito! O Banco Santander não precisa substituir seu banco atual — é uma conta complementar, sem custos e com benefícios exclusivos.
+Você pode usar só o que quiser, e ainda contar com alternativas como investimentos, cartão black e até tag de pedágio gratuita.
+
+❓"Não conheço o Banco Santander"
+
+Claro! O Banco Santander é um banco 100% digital, autorizado e fiscalizado pelo Banco Central, com mais de 25 milhões de clientes.
+Ele vem crescendo muito justamente por oferecer tudo que os grandes bancos têm, mas sem cobrar tarifas.
+
+❓"Não tenho tempo agora"
+
+Tranquilo! A abertura é super rápida, leva menos de 5 minutos, e eu posso te enviar o link pra fazer quando estiver disponível.
+Quer que eu envie agora por WhatsApp ou e-mail?
+
+❓"Não gosto de banco digital"
+
+Entendo! Mas o Banco Santander oferece atendimento humanizado pelo app, suporte rápido, e uma estrutura completa — inclusive com opções de crédito e até conta PJ.
+Muita gente que era resistente a banco digital mudou de ideia depois de testar. Posso te mostrar como funciona, sem compromisso?
+
+❓"Não preciso de outra conta"
+
+Sem problema! Mas vale a pena conhecer os benefícios. É uma conta gratuita que pode até ajudar a melhorar seu score de crédito e oferecer linhas de crédito mais acessíveis no futuro.
+Já que não tem custo, vale deixar disponível, mesmo que só como uma alternativa.
+
+
+
+
+==============================================================================
+📞 Roteiro Estendido – Abertura de Conta Banco Santander (Público 27+ / Empresarial)
+✅ Objetivo: Gerar interesse, apresentar valor e conduzir o lead à abertura imediata da conta.
+1. Abertura (30 segundos)
+Olá, tudo bem?
+Meu nome é [Seu Nome], falo em nome do Banco Santander.
+Estou entrando em contato pra te apresentar uma conta digital sem tarifas, com benefícios exclusivos que têm ajudado muitos profissionais e empresas a economizar tempo e dinheiro no dia a dia financeiro.
+
+Você já conhece o Banco Santander?
+
+2. Mini Pitch (caso não conheça)
+O Banco Santander é um banco digital completo, autorizado pelo Banco Central, com mais de 25 milhões de clientes.
+Oferece cartão de crédito e débito sem anuidade, Pix e TED ilimitados, tag de pedágio gratuita, programa de pontos gratuito, linha de crédito, investimentos e até conta PJ, tudo num só app.
+
+A conta é gratuita e pode ser aberta em menos de 5 minutos — sem burocracia.
+
+3. Pergunta-Chave (engajamento)
+Só pra entender um pouco melhor:
+Você utiliza mais a conta como pessoa física, ou também tem movimentações como empresa?
+
+(A resposta te ajuda a focar nos benefícios certos – como Tag, crédito pessoal, ou soluções PJ).
+
+4. Apresentação Direcionada (exemplos)
+➤ Se PF / profissional liberal:
+Perfeito! Nesse caso, a conta PF do Banco Santander é ideal — além de gratuita, ela permite controlar tudo direto do celular, com cartão de crédito sem anuidade, limite flexível e possibilidade de investir com rentabilidades acima da poupança.
+
+➤ Se PJ / empresa:
+Ótimo! A conta PJ também é gratuita e oferece transferências ilimitadas, boleto para cobrança, Pix para clientes, gestão de múltiplos usuários e até linha de crédito empresarial.
+
+5. Fechamento Direto com Suavidade
+Eu consigo te ajudar com a abertura agora mesmo — leva menos de 5 minutos e é tudo pelo celular.
+Você prefere que a gente faça junto agora ou quer que eu envie o link pra você fazer quando estiver disponível?
+
+(Dê preferência ao fechamento imediato, mas aceite o agendamento como alternativa viável.)
+
+🔄 Objeções + Respostas Inteligentes (Resumo)
+Objeção	Resposta
+Já tenho banco	Sem problema! Essa conta pode ser sua opção reserva, sem custos, só com benefícios.
+Não conheço o Banco Santander	É um banco digital autorizado pelo Banco Central, com milhões de clientes no Brasil. Cresce justamente por ser completo e gratuito.
+Agora não posso	Tranquilo! Posso te mandar o link no WhatsApp ou e-mail pra você abrir no melhor momento.
+Não gosto de banco digital	Entendo. O Banco Santander tem atendimento humanizado, suporte ágil e opções completas como os bancos físicos, só que sem as tarifas
+
+<!-- conteúdo mantido aqui, encurtado para visualização -->
+    </pre>
+  </section>
+
+  <!-- Aplicativo -->
+  <section class="tab-content" id="aplicativo" style="display:none;">
+    <h2>Simulador do Aplicativo</h2>
+    <div class="image-container">
+      <img id="appImage" src="app 1.jpeg" alt="Aplicativo" class="app-img" />
+      <div class="nav-buttons">
+        <button onclick="changeImage('appImage', appImages, -1)">&lt; Voltar</button>
+        <button onclick="changeImage('appImage', appImages, 1)">Avançar &gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recepção do E-mail -->
+  <section class="tab-content" id="recepcao" style="display:none;">
+    <h2>Recepção do E-mail</h2>
+    <div class="image-container">
+      <img id="emailImage" src="E-mail 1.jpeg" alt="Recepção Email" class="app-img" />
+      <div class="nav-buttons">
+        <button onclick="changeImage('emailImage', emailImages, -1)">&lt; Voltar</button>
+        <button onclick="changeImage('emailImage', emailImages, 1)">Avançar &gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ferramentas e Acessos -->
+  <section class="tab-content" id="passos" style="display:none;">
+    <h2>Ferramentas e Acessos</h2>
+    <ol>
+      <li> Parceiro Santander </li>
+      <li> https://www.parceirosantander.com.br/spa-base/logged-area/home </li>
+
+      <li> Callix </li>
+      <li> https://wiseconsulting02.callix.com.br/campaigns </li>
+    </ol>
+  </section>
+
+  <!-- PDF - Material de Apoio -->
+  <section class="tab-content" id="pdf" style="display:none;">
+    <h2>Visualizar ou Baixar PDF</h2>
+    <p>Visualize o material de apoio diretamente abaixo ou clique para baixar:</p>
+    
+    <iframe src="Guia da Abordagem e Negociação.PDF" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    
+    <p style="margin-top: 15px;">
+      <a href="Guia da Abordagem e Negociação.PDF" download style="background-color: #ec0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">📥 Baixar PDF</a>
+    </p>
+  </section>
+
+  <!-- PDF - Material de Apoio -->
+  <section class="tab-content" id="pdfE1" style="display:none;">
+    <h2>Visualizar ou Baixar PDF</h2>
+    <p>Visualize o material de apoio diretamente abaixo ou clique para baixar:</p>
+    
+    <iframe src="Guia Rápido_E1.PDF" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    
+    <p style="margin-top: 15px;">
+      <a href="Guia Rápido_E1.PDF" download style="background-color: #ec0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">📥 Baixar PDF</a>
+    </p>
+  </section>  
+
+  <!-- PDF - Material de Apoio -->
+  <section class="tab-content" id="pdfMEI" style="display:none;">
+    <h2>Visualizar ou Baixar PDF</h2>
+    <p>Visualize o material de apoio diretamente abaixo ou clique para baixar:</p>
+    
+    <iframe src="Guia Rápido_MEI.PDF" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    
+    <p style="margin-top: 15px;">
+      <a href="Guia Rápido_MEI.PDF" download style="background-color: #ec0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">📥 Baixar PDF</a>
+    </p>
+  </section>
+
+  <!-- PDF - Material de Apoio -->
+  <section class="tab-content" id="pdfParceiros" style="display:none;">
+    <h2>Visualizar ou Baixar PDF</h2>
+    <p>Visualize o material de apoio diretamente abaixo ou clique para baixar:</p>
+    
+    <iframe src="Guia Rápido_SParceiros.PDF" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    
+    <p style="margin-top: 15px;">
+      <a href="Guia Rápido_SParceiros.PDF" download style="background-color: #ec0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">📥 Baixar PDF</a>
+    </p>
+  </section>   
+
+  <!-- Simulador de GETNET --> 
+<section class="tab-content" id="SimuladorGET" style="display:none;">
+  <h2>Simulador da GETNET</h2>
+  <p>Utilize os botões para executar as funções</p>
+  <iframe src="simulador.html" style="border: 1px solid #ccc; width: 100%; height: 100vh;"></iframe>
+</section>
+
+  <!-- PDF - Material de Apoio -->
+  <section class="tab-content" id="CapacitacaoMEI" style="display:none;">
+    <h2>Visualizar ou Baixar PDF</h2>
+    <p>Visualize o material de apoio diretamente abaixo ou clique para baixar:</p>
+    
+    <iframe src="Material de Capacitação MEI.PDF" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    
+    <p style="margin-top: 15px;">
+      <a href="Material de Capacitação MEI.PDF" download style="background-color: #ec0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">📥 Baixar PDF</a>
+    </p>
+  </section>   
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbuttons;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Lista de imagens para cada aba
+    const appImages = ["App 1.jpeg", "App 2.jpeg", "App 3.jpeg", "App 4.jpeg", "App 5.jpeg", "App 6.jpeg", "App 7.jpeg", "App 8.jpeg", "App 9.jpeg", "App 10.jpeg", "App 11.jpeg", "App 12.jpeg", "App 13.jpeg", "App 14.jpeg", "App 15.jpeg", "App 16.jpeg", "App 17.jpeg", "App 18.jpeg", "App 19.jpeg", "App 20.jpeg", "App 21.jpeg"];
+    const emailImages = ["E-mail 1.jpeg", "E-mail 2.jpeg", "E-mail 3.jpeg"];
+
+    let imageIndices = {
+      appImage: 0,
+      emailImage: 0
+    };
+
+    function changeImage(imgId, imgArray, direction) {
+      imageIndices[imgId] += direction;
+      if (imageIndices[imgId] < 0) imageIndices[imgId] = imgArray.length - 1;
+      if (imageIndices[imgId] >= imgArray.length) imageIndices[imgId] = 0;
+      document.getElementById(imgId).src = imgArray[imageIndices[imgId]];
+    }
+  </script>
+</body>
+</html>

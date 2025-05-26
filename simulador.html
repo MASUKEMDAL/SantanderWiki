@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Getnet</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .machine {
+      background-color: #c70808;
+      border: 5px solid #b30000;
+      border-radius: 20px;
+      width: 320px;
+      height: 600px;
+      padding: 10px;
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-red {
+      background-color: #b30000;
+      width: 100%;
+      height: 50px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .display {
+      background-color: #fff;
+      border: 12px solid black;
+      width: 90%;
+      height: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+    }
+
+    #display-text {
+      font-size: 14px;
+      color: black;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .keyboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 25%;
+    }
+
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      width: 100%;
+    }
+
+    .num, .color-btn {
+      border: none;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 8px;
+      color: white;
+    }
+
+    .num {
+      background-color: #160101;
+    }
+
+    .color-btn.red {
+      background-color: red;
+    }
+
+    .color-btn.yellow {
+      background-color: gold;
+    }
+
+    .color-btn.green {
+      background-color: green;
+      grid-row: span 2;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .receipt {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 2px solid black;
+      padding: 10px;
+      width: 250px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: black;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    .receipt h3 {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .receipt p {
+      margin: 5px 0;
+    }
+
+    .print-animation {
+      visibility: visible;
+      opacity: 1;
+      animation: printAnimation 3s forwards;
+    }
+
+    @keyframes printAnimation {
+      0% {
+        bottom: 0;
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 90px;
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="machine">
+  <div class="top-red">
+    <div class="logo">GETNET</div>
+  </div>
+
+  <div class="display">
+    <div id="display-text">Aguardando operação...</div>
+  </div>
+
+  <div class="keyboard">
+    <div class="keys">
+      <button class="num">1</button>
+      <button class="num">2</button>
+      <button class="num">3</button>
+      <button class="color-btn red">X</button>
+
+      <button class="num">4</button>
+      <button class="num">5</button>
+      <button class="num">6</button>
+      <button class="color-btn yellow">↩</button>
+
+      <button class="num">7</button>
+      <button class="num">8</button>
+      <button class="num">9</button>
+      <button class="color-btn green">OK</button>
+
+      <button class="num">0</button>
+      <button class="color-btn">Menu</button>
+      <button class="color-btn">-</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const display = document.getElementById('display-text');
+  const buttons = document.querySelectorAll('.num, .color-btn');
+
+  let transactionDetails = '';
+  let transactionAmount = 'R$ 50,00';
+  let isMenuActive = false;
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const value = button.textContent.trim();
+
+      switch (value) {
+        case 'X':
+          display.textContent = 'Operação cancelada!';
+          transactionDetails = '';
+          break;
+
+        case '↩':
+          display.textContent = 'Informações limpas';
+          transactionDetails = '';
+          break;
+
+        case 'OK':
+          if (transactionDetails) {
+            display.innerHTML = `Operação confirmada: ${transactionDetails}`;
+          } else {
+            display.textContent = 'Nenhuma operação selecionada';
+          }
+          break;
+
+        case 'Menu':
+          isMenuActive = !isMenuActive;
+          if (isMenuActive) {
+            display.innerHTML = 'Menu de Funções: <br>1. Cancelar <br>2. Reimprimir';
+          } else {
+            display.textContent = 'Menu fechado';
+          }
+          break;
+
+        case '-':
+          if (transactionDetails) {
+            simulateReceipt();
+          } else {
+            display.textContent = 'Nenhuma transação para reimprimir';
+          }
+          break;
+
+        default:
+          if (!isMenuActive) {
+            transactionDetails += value;
+            display.textContent = `Informações: ${transactionDetails}`;
+          }
+          break;
+      }
+    });
+  });
+
+  function simulateReceipt() {
+    const existing = document.querySelector('.receipt');
+    if (existing) existing.remove();
+
+    const receipt = document.createElement('div');
+    receipt.classList.add('receipt');
+    const date = new Date();
+    const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth()+1).toString().padStart(2, '0')}/${date.getFullYear()} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+
+    receipt.innerHTML = `
+      <h3>Recibo de Transação</h3>
+      <p>Data: ${formattedDate}</p>
+      <p>Valor: ${transactionAmount}</p>
+      <p>Cartão: **** 1234</p>
+      <p>Loja: Exemplo de Loja</p>
+    `;
+
+    document.body.appendChild(receipt);
+
+    requestAnimationFrame(() => {
+      receipt.classList.add('print-animation');
+    });
+
+    setTimeout(() => {
+      receipt.remove();
+    }, 4000);
+  }
+</script>
+
+</body>
+</html>
